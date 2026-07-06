@@ -1,13 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Abbeydale YardOps icon">
-  <defs>
-    <linearGradient id="g2" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0" stop-color="#071426"/>
-      <stop offset="1" stop-color="#0b1f38"/>
-    </linearGradient>
-  </defs>
-  <rect width="512" height="512" rx="108" fill="url(#g2)"/>
-  <path d="M78 392L191 88h84L165 392z" fill="#284a91"/>
-  <path d="M247 88h71l116 304h-92l-66-183-66 183h-84z" fill="#12b7ea"/>
-  <rect x="176" y="323" width="232" height="54" rx="16" fill="#284a91" opacity=".95"/>
-  <text x="292" y="360" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="900" fill="#ffffff" letter-spacing="1">YARDOPS</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Abbeydale app icon">
+  <rect width="512" height="512" rx="96" fill="#ffffff"/>
+  <path d="M103 420 L235 76 H321 L194 420 Z" fill="#284a91"/>
+  <path d="M292 420 L361 207 H424 L499 420 H390 L358 306 L327 420 Z" fill="#12b7ea"/>
+  <rect x="0" y="0" width="512" height="512" rx="96" fill="none" stroke="#e5e7eb" stroke-width="10"/>
 </svg>
