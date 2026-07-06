@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 190" role="img" aria-label="Abbeydale logo">
+  <rect width="760" height="190" fill="transparent"/>
+  <path d="M18 165 L88 15 H148 L81 165 Z" fill="#284a91"/>
+  <path d="M159 165 L218 45 H268 L320 165 H252 L224 92 L190 165 Z" fill="#12b7ea"/>
+  <path d="M300 72 H735 V146 H300 Z" fill="#284a91"/>
+  <text x="334" y="126" font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="58" font-weight="900" fill="#ffffff" letter-spacing="5">ABBEYDALE</text>
+  <text x="462" y="180" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#284a91" letter-spacing="3">First for construction</text>
+</svg>
