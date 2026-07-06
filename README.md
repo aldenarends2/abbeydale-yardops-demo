@@ -28,3 +28,5 @@ Mobile-first installable PWA prototype for Abbeydale Construction yard operation
 This is a front-end prototype only. The next build step is to connect the forms and search to a live data source such as Google Sheets, Supabase, or a private database.
 
 Built for sales/demo validation before the full Abbeydale YardOps MVP.
+
+Deployment retry: 2026-07-06 17:37 SAST.
