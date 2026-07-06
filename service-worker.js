@@ -1,10 +1,10 @@
-const CACHE_NAME = 'abbeydale-yardops-v9';
+const CACHE_NAME = 'abbeydale-yardops-v10';
 const CORE_FILES = [
   './',
   './index.html',
   './manifest.json',
-  './assets/abbeydale-logo.svg?v=9',
-  './assets/icon.svg?v=9'
+  './assets/abbeydale-logo.svg?v=10',
+  './assets/icon.svg?v=10'
 ];
 
 self.addEventListener('install', event => {
