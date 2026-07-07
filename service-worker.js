@@ -1,5 +1,5 @@
-const CACHE_NAME = 'abbeydale-yardops-v26-install';
-const APP_SHELL = ['./?v=26','./index.html','./manifest.json?v=26','./assets/app.css?v=26','./assets/app.js?v=26','./assets/abbeydale-logo.svg?v=26','./assets/icon.svg?v=26'];
+const CACHE_NAME = 'abbeydale-yardops-v27-brand';
+const APP_SHELL = ['./?v=27','./index.html','./manifest.json?v=27','./assets/app.css?v=27','./assets/app.js?v=27','./assets/abbeydale-logo.svg?v=27','./assets/icon.svg?v=27'];
 self.addEventListener('install', event => {
   self.skipWaiting();
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_SHELL)).catch(() => null));
