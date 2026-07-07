@@ -3,40 +3,49 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#061427">
+<meta name="theme-color" content="#03111f">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>Abbeydale YardOps Command Centre</title>
-<link rel="manifest" href="manifest.json?v=28">
-<link rel="icon" href="assets/icon.svg?v=28" type="image/svg+xml">
-<link rel="apple-touch-icon" href="assets/icon.svg?v=28">
+<link rel="manifest" href="manifest.json?v=30">
+<link rel="icon" href="assets/icon.svg?v=30" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icon.svg?v=30">
 <link rel="stylesheet" href="assets/app.css?v=28">
+<link rel="stylesheet" href="assets/northstar.css?v=30">
 </head>
 <body>
-<div id="splash" class="splash"><div><img src="assets/yardops-splash.svg?v=28" alt="Abbeydale YardOps"><p id="loadText">Loading YardOps...</p></div></div>
-<div class="app">
-<aside class="side desk"><img src="assets/abbeydale-logo.svg?v=28" alt="Abbeydale"><nav id="sideNav" class="sideNav"></nav><div style="margin-top:auto;color:#aac1da;font-size:11px" id="refreshText">Loading...</div></aside>
-<section>
-<header class="top">
-  <div class="brand">
-    <img class="logo" src="assets/abbeydale-logo.svg?v=28" alt="Abbeydale">
-    <div class="topBtns"><button class="installBtn" id="installBtn" onclick="installApp()">Install</button><button class="staff" onclick="openAuth()" id="mobileStaff">Staff</button></div>
-    <div class="grow"><h1>YardOps Command Centre</h1><p id="dataStatus">Live DB · Install ready</p></div>
+<div id="splash" class="splash loadingScreen" role="status" aria-live="polite">
+  <div class="loading-card">
+    <img class="loading-logo" src="assets/abbeydale-logo.svg?v=30" alt="Abbeydale">
+    <h1><span>YardOps</span> Command Centre</h1>
+    <p id="loadText">Loading YardOps...</p>
+    <div class="segmented-loader" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
   </div>
-  <div class="search"><input id="globalSearch" placeholder="Search grinder, poker, request, supplier..."><button onclick="runSearch()">⌕</button></div>
+</div>
+<div class="app appShell">
+<aside class="side desk"><img src="assets/abbeydale-logo.svg?v=30" alt="Abbeydale"><nav id="sideNav" class="sideNav"></nav><div style="margin-top:auto;color:#aac1da;font-size:11px" id="refreshText">Loading...</div></aside>
+<section>
+<header class="top commandHeader">
+  <div class="brand">
+    <img class="logo" src="assets/abbeydale-logo.svg?v=30" alt="Abbeydale">
+    <div class="topBtns"><button class="installBtn" id="installBtn" onclick="installApp()">Install</button><button class="staff" onclick="openAuth()" id="mobileStaff">Staff</button></div>
+    <div class="grow"><h1>YardOps Command Centre</h1><p id="dataStatus">Live DB · Staff Mode · Blackheath Yard</p></div>
+  </div>
+  <div class="search commandSearch"><input id="globalSearch" placeholder="Search assets, request, supplier, site..."><button onclick="runSearch()" aria-label="Search">⌕</button></div>
 </header>
 <header class="deskTop desk"><h1>YardOps Command Centre</h1><input id="desktopSearch" placeholder="Search requests, plant, supplier prices..."><button class="installBtn" onclick="installApp()">Install</button><button class="staff" onclick="openAuth()" id="profileRole">Staff</button></header>
 <main class="wrap">
 <section id="dashboard" class="section on">
-  <div class="hero mobileOnly"><div class="heroTop"><div class="mark"><div class="star">✦</div><div><h2>Abbeydale AI Copilot</h2><p>Supplier pricing, plant and request assistant.</p></div></div><span id="catBadge" class="live">Loading</span></div><div id="heroAnswer" class="answer">Loading database and supplier price memory...</div><div class="chips"><button onclick="askAI('What needs attention today?')">Today</button><button onclick="askAI('grinder')">Grinder</button><button onclick="askAI('poker')">Poker</button><button onclick="setTab('requests')">Requests</button></div><div class="ask"><input id="heroAsk" placeholder="Ask or search pricing..."><button onclick="askAI(heroAsk.value)">Ask</button></div><div id="sourceLine" class="source">Starting up...</div></div>
+  <div class="hero copilot-card mobileOnly"><div class="heroTop"><div class="mark"><div class="star">✦</div><div><h2>Abbeydale AI Copilot</h2><p>Supplier pricing, plant and request assistant.</p></div></div><span id="catBadge" class="live">Loading</span></div><div id="heroAnswer" class="answer">Loading database and supplier price memory...</div><div class="chips"><button onclick="askAI('What needs attention today?')">Today</button><button onclick="askAI('urgent high priority requests')">Urgent</button><button onclick="askAI('grinder')">Grinder</button><button onclick="askAI('poker')">Poker</button><button onclick="askAI('open requests')">Open Requests</button></div><div class="ask"><input id="heroAsk" placeholder="Ask or search pricing..."><button onclick="askAI(heroAsk.value)">Ask</button></div><div id="sourceLine" class="source">Starting up...</div></div>
   <div id="kpis" class="kpis"></div>
-  <div class="grid three"><div class="panel"><div class="head"><h2>Open Requests</h2><button class="action" onclick="openForm('request')">New Request</button></div><div id="dashReq" class="list"></div></div><div class="panel"><div class="head"><h2>Urgent Maintenance</h2><button class="action" onclick="setTab('service')">View all</button></div><div id="dashService" class="list"></div></div><div class="panel"><div class="head"><h2>Price Memory</h2><button class="action" onclick="setTab('ai')">Ask AI</button></div><div id="dashPrices" class="list"></div></div></div>
-  <div class="grid two" style="margin-top:14px"><div class="panel"><div class="head"><h2>Plant Overview</h2><button class="action" onclick="setTab('assets')">View all</button></div><div id="dashAssets" class="list"></div></div><div class="panel"><div class="head"><h2>Workflow</h2></div><div class="list"><div class="item"><h3>Simple field flow</h3><p>Anyone can search prices and copy supplier messages. Staff Mode is only needed to create or update live job cards.</p><div class="badges"><span class="pill blue">Search</span><span class="pill orange">Staff Update</span><span class="pill green">Close Out</span></div></div></div></div></div>
+  <div class="grid three"><div class="panel glassCard"><div class="head"><h2>Open Requests</h2><button class="action" onclick="openForm('request')">New Request</button></div><div id="dashReq" class="list"></div></div><div class="panel glassCard"><div class="head"><h2>Urgent Maintenance</h2><button class="action" onclick="setTab('service')">View all</button></div><div id="dashService" class="list"></div></div><div class="panel glassCard"><div class="head"><h2>Price Memory</h2><button class="action" onclick="setTab('ai')">Ask AI</button></div><div id="dashPrices" class="list"></div></div></div>
+  <div class="grid two" style="margin-top:14px"><div class="panel glassCard"><div class="head"><h2>Plant Overview</h2><button class="action" onclick="setTab('assets')">View all</button></div><div id="dashAssets" class="list"></div></div><div class="panel glassCard"><div class="head"><h2>Workflow</h2></div><div class="list"><div class="item"><h3>Simple field flow</h3><p>Anyone can search prices and copy supplier messages. Staff Mode is only needed to create or update live job cards.</p><div class="badges"><span class="pill blue">Search</span><span class="pill orange">Staff Update</span><span class="pill green">Close Out</span></div></div></div></div></div>
 </section>
-<section id="requests" class="section"><div class="panel"><div class="head"><h2>Requests / Job Cards</h2><button class="action" onclick="openForm('request')">New Request</button></div><div id="reqFilters" class="filters"></div><div id="reqList" class="list"></div></div></section>
-<section id="assets" class="section"><div class="panel"><div class="head"><h2>Plant Register</h2><button class="action" onclick="openForm('asset')">Add Asset</button></div><div class="table"><table><thead><tr><th>ID</th><th>Asset</th><th>Category</th><th>Location</th><th>Status</th><th>Condition</th></tr></thead><tbody id="assetTable"></tbody></table></div></div></section>
-<section id="service" class="section"><div class="panel"><div class="head"><h2>Maintenance</h2><button class="action" onclick="openForm('service')">Add Task</button></div><div id="serviceList" class="list"></div></div></section>
-<section id="ai" class="section"><div class="hero"><div class="heroTop"><div class="mark"><div class="star">✦</div><div><h2>Ask YardOps Copilot</h2><p>Search Hire-It / supplier catalogue memory.</p></div></div><span class="live" id="catBadge2">Price Memory</span></div><div id="copilotAnswer" class="answer">Ask: How much is a grinder to hire?</div><div class="chips"><button onclick="askAI('grinder')">Grinder</button><button onclick="askAI('drive unit')">Drive unit</button><button onclick="askAI('poker')">Poker</button><button onclick="askAI('generator')">Generator</button><button onclick="askAI('pump')">Pump</button></div><div class="ask"><input id="copilotAsk" placeholder="Ask about requests, plant or pricing..."><button onclick="askAI(copilotAsk.value)">Ask</button></div></div></section>
+<section id="requests" class="section"><div class="panel glassCard"><div class="head"><h2>Requests / Job Cards</h2><button class="action" onclick="openForm('request')">New Request</button></div><div id="reqFilters" class="filters"></div><div id="reqList" class="list"></div></div></section>
+<section id="assets" class="section"><div class="panel glassCard"><div class="head"><h2>Plant Register</h2><button class="action" onclick="openForm('asset')">Add Asset</button></div><div class="table"><table><thead><tr><th>ID</th><th>Asset</th><th>Category</th><th>Location</th><th>Status</th><th>Condition</th></tr></thead><tbody id="assetTable"></tbody></table></div></div></section>
+<section id="service" class="section"><div class="panel glassCard"><div class="head"><h2>Maintenance</h2><button class="action" onclick="openForm('service')">Add Task</button></div><div id="serviceList" class="list"></div></div></section>
+<section id="ai" class="section"><div class="hero copilot-card"><div class="heroTop"><div class="mark"><div class="star">✦</div><div><h2>Ask YardOps Copilot</h2><p>Search Hire-It / supplier catalogue memory.</p></div></div><span class="live" id="catBadge2">Price Memory</span></div><div id="copilotAnswer" class="answer">Ask: How much is a grinder to hire?</div><div class="chips"><button onclick="askAI('grinder')">Grinder</button><button onclick="askAI('drive unit')">Drive unit</button><button onclick="askAI('poker')">Poker</button><button onclick="askAI('generator')">Generator</button><button onclick="askAI('pump')">Pump</button></div><div class="ask"><input id="copilotAsk" placeholder="Ask about requests, plant or pricing..."><button onclick="askAI(copilotAsk.value)">Ask</button></div></div></section>
 </main>
 </section>
 <button class="fab" onclick="openCopilot()">✦</button><nav id="bottomNav" class="bottom"></nav>
@@ -45,6 +54,6 @@
 <div id="authModal" class="modal"><div class="mHead"><h2>Staff Sign-in</h2><button class="x" onclick="closeAuth()">×</button></div><div class="fields"><p class="hint">Staff Mode is for trusted internal users. Later roles become Nico, site manager, foreman, QS, admin or director.</p><input id="authEmail" type="email" placeholder="Email"><input id="authPass" type="password" placeholder="Password"><p class="hint" id="authState">Not signed in.</p></div><div class="row"><button class="secondary" onclick="signOut()">Sign out</button><button class="primary" onclick="signIn()">Sign in</button></div></div>
 <div id="toast" class="toast"></div>
 </div>
-<script src="assets/app.js?v=28"></script>
+<script src="assets/app.js?v=30"></script>
 </body>
 </html>
