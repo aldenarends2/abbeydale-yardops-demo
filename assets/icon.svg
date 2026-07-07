@@ -1,6 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Abbeydale app icon">
-  <rect width="512" height="512" rx="96" fill="#ffffff"/>
-  <path d="M116 414 L251 76 H329 L200 414 Z" fill="#284a91"/>
-  <path d="M282 414 L352 190 H415 L492 414 H385 L355 306 L322 414 Z" fill="#12b7ea"/>
-  <rect x="0" y="0" width="512" height="512" rx="96" fill="none" stroke="#eef2f7" stroke-width="10"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Abbeydale Construction app icon">
+  <rect width="512" height="512" fill="#ffffff"/>
+  <path d="M112 399 L236 94 H333 L208 399 Z" fill="#254a91"/>
+  <path d="M270 399 L336 176 H392 L488 399 H358 L321 290 Z" fill="#11aee0"/>
 </svg>
