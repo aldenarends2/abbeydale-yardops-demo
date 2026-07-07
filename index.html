@@ -8,11 +8,12 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>Abbeydale YardOps Command Centre</title>
-<link rel="manifest" href="manifest.json?v=30">
+<link rel="manifest" href="manifest.json?v=31">
 <link rel="icon" href="assets/icon.svg?v=30" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/icon.svg?v=30">
 <link rel="stylesheet" href="assets/app.css?v=28">
 <link rel="stylesheet" href="assets/northstar.css?v=30">
+<link rel="stylesheet" href="assets/header-polish.css?v=31">
 </head>
 <body>
 <div id="splash" class="splash loadingScreen" role="status" aria-live="polite">
@@ -54,6 +55,15 @@
 <div id="authModal" class="modal"><div class="mHead"><h2>Staff Sign-in</h2><button class="x" onclick="closeAuth()">×</button></div><div class="fields"><p class="hint">Staff Mode is for trusted internal users. Later roles become Nico, site manager, foreman, QS, admin or director.</p><input id="authEmail" type="email" placeholder="Email"><input id="authPass" type="password" placeholder="Password"><p class="hint" id="authState">Not signed in.</p></div><div class="row"><button class="secondary" onclick="signOut()">Sign out</button><button class="primary" onclick="signIn()">Sign in</button></div></div>
 <div id="toast" class="toast"></div>
 </div>
-<script src="assets/app.js?v=30"></script>
+<script>
+(function(){
+  var standalone=function(){return window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true};
+  function sync(){document.body.classList.toggle('standalone-mode',standalone())}
+  document.addEventListener('DOMContentLoaded',sync);
+  window.addEventListener('beforeinstallprompt',function(){sync();if(!standalone())document.body.classList.add('show-install')});
+  window.addEventListener('appinstalled',function(){document.body.classList.remove('show-install');document.body.classList.add('standalone-mode')});
+})();
+</script>
+<script src="assets/app.js?v=31"></script>
 </body>
 </html>
