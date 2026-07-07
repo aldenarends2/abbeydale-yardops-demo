@@ -1,11 +1,12 @@
-const CACHE_NAME = 'abbeydale-yardops-v30-northstar-assets';
+const CACHE_NAME = 'abbeydale-yardops-v31-header-polish-assets';
 const APP_SHELL = [
-  './?v=30',
+  './?v=31',
   './index.html',
-  './manifest.json?v=30',
+  './manifest.json?v=31',
   './assets/app.css?v=28',
   './assets/northstar.css?v=30',
-  './assets/app.js?v=30',
+  './assets/header-polish.css?v=31',
+  './assets/app.js?v=31',
   './assets/abbeydale-logo.svg?v=30',
   './assets/icon.svg?v=30',
   './assets/icon-192.svg?v=30',
