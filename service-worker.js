@@ -1,4 +1,4 @@
-const CACHE_NAME = 'abbeydale-yardops-v19';
+const CACHE_NAME = 'abbeydale-yardops-v20';
 self.addEventListener('install', event => self.skipWaiting());
 self.addEventListener('activate', event => event.waitUntil(self.clients.claim()));
 self.addEventListener('fetch', event => {
