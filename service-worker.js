@@ -1,5 +1,17 @@
-const CACHE_NAME = 'abbeydale-yardops-v28-production-assets';
-const APP_SHELL = ['./?v=28','./index.html','./manifest.json?v=28','./assets/app.css?v=28','./assets/app.js?v=28','./assets/abbeydale-logo.svg?v=28','./assets/icon.svg?v=28','./assets/yardops-splash.svg?v=28'];
+const CACHE_NAME = 'abbeydale-yardops-v30-northstar-assets';
+const APP_SHELL = [
+  './?v=30',
+  './index.html',
+  './manifest.json?v=30',
+  './assets/app.css?v=28',
+  './assets/northstar.css?v=30',
+  './assets/app.js?v=30',
+  './assets/abbeydale-logo.svg?v=30',
+  './assets/icon.svg?v=30',
+  './assets/icon-192.svg?v=30',
+  './assets/icon-512.svg?v=30',
+  './assets/yardops-splash.svg?v=28'
+];
 self.addEventListener('install', event => {
   self.skipWaiting();
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_SHELL)).catch(() => null));
