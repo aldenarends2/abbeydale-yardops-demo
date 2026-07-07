@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" role="img" aria-label="Abbeydale YardOps loading screen">
+  <defs>
+    <radialGradient id="bg" cx="78%" cy="90%" r="90%">
+      <stop offset="0" stop-color="#0b78b5"/>
+      <stop offset="0.32" stop-color="#06294b"/>
+      <stop offset="1" stop-color="#020914"/>
+    </radialGradient>
+    <linearGradient id="line" x1="0" x2="1"><stop stop-color="#003c76"/><stop offset="0.5" stop-color="#12b7ea"/><stop offset="1" stop-color="#003c76"/></linearGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="12"/></filter>
+  </defs>
+  <rect width="1080" height="1920" fill="url(#bg)"/>
+  <circle cx="930" cy="1700" r="450" fill="#12b7ea" opacity="0.18" filter="url(#soft)"/>
+  <path d="M-80 1230 L260 1890 H-60 Z" fill="none" stroke="#125ea8" stroke-width="3" opacity="0.35"/>
+  <path d="M1180 1200 L840 1900 H1160 Z" fill="none" stroke="#12b7ea" stroke-width="3" opacity="0.34"/>
+  <g transform="translate(128 592) scale(.54)">
+    <path d="M36 420 L224 64 H370 L194 420 Z" fill="#284A91"/>
+    <path d="M420 420 L548 132 H665 L805 420 H670 L598 218 L512 420 Z" fill="#10AEE1"/>
+    <rect x="694" y="195" width="790" height="118" fill="#284A91"/>
+    <text x="755" y="282" font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="86" font-weight="900" fill="#FFFFFF" letter-spacing="7">ABBEYDALE</text>
+    <text x="930" y="406" font-family="Arial, Helvetica, sans-serif" font-size="42" fill="#284A91" letter-spacing="7">First for construction</text>
+  </g>
+  <text x="180" y="1004" font-family="Arial, Helvetica, sans-serif" font-size="58" fill="#10AEE1" font-weight="800" letter-spacing="1">YardOps</text>
+  <text x="420" y="1004" font-family="Arial, Helvetica, sans-serif" font-size="58" fill="#ffffff" font-weight="400" letter-spacing="1">Command Centre</text>
+  <rect x="240" y="1084" width="600" height="3" fill="url(#line)" opacity="0.85"/>
+  <circle cx="540" cy="1085" r="7" fill="#12b7ea" filter="url(#soft)"/>
+  <text x="540" y="1238" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="38" fill="#cbd5e1" letter-spacing="2">Loading YardOps...</text>
+  <g transform="translate(410 1304)">
+    <rect x="0" y="0" width="9" height="34" rx="4" fill="#0d3b7d"/>
+    <rect x="23" y="0" width="9" height="34" rx="4" fill="#0d3b7d"/>
+    <rect x="46" y="0" width="9" height="34" rx="4" fill="#0d58a8"/>
+    <rect x="69" y="0" width="9" height="34" rx="4" fill="#0d58a8"/>
+    <rect x="92" y="0" width="9" height="34" rx="4" fill="#12b7ea"/>
+    <rect x="115" y="0" width="9" height="34" rx="4" fill="#12b7ea"/>
+    <rect x="138" y="0" width="9" height="34" rx="4" fill="#0d58a8"/>
+    <rect x="161" y="0" width="9" height="34" rx="4" fill="#0d3b7d"/>
+    <rect x="184" y="0" width="9" height="34" rx="4" fill="#0d3b7d"/>
+    <rect x="207" y="0" width="9" height="34" rx="4" fill="#0d3b7d"/>
+    <rect x="230" y="0" width="9" height="34" rx="4" fill="#0d3b7d"/>
+  </g>
+</svg>
