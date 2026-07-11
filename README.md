@@ -1,6 +1,17 @@
 # Abbeydale YardOps Command Centre
 
-Mobile-first installable PWA prototype for Abbeydale Construction yard operations.
+> **Demo only:** This repository is a prototype for sales, design validation, and client discussion. It is not a production operational system and must not contain real client secrets, supplier credentials, private pricing, or production data.
+
+## Repository status
+
+- Lifecycle: `DEMO`
+- Capability: `CLIENT_DEMO`, `FRONTEND_ONLY`, `PUBLIC_DEMO`
+- Visibility: Public
+- Production use: Not authorised
+- Canonical role: Mobile-first PWA prototype for demonstrating Abbeydale Construction yard operations
+- Supersedes: None
+- Superseded by: Future approved Abbeydale YardOps MVP, if commissioned
+- Last reviewed: 2026-07-11
 
 ## What this demo shows
 
@@ -12,6 +23,13 @@ Mobile-first installable PWA prototype for Abbeydale Construction yard operation
 - Supplier and invoice lookup
 - Demo AI-style operational search
 - Add-to-home-screen app behaviour
+
+## Data and safety boundary
+
+- Frontend demonstration only.
+- Use fictional, sanitised, or explicitly approved demonstration data.
+- Do not commit real employee records, client-private documents, supplier credentials, production database access, API keys, or private commercial pricing.
+- No production workflow, payment action, supplier message, or live operational command is authorised from this repository.
 
 ## How to publish with GitHub Pages
 
@@ -25,8 +43,8 @@ Mobile-first installable PWA prototype for Abbeydale Construction yard operation
 
 ## Demo status
 
-This is a front-end prototype only. The next build step is to connect the forms and search to a live data source such as Google Sheets, Supabase, or a private database.
+This is a front-end prototype only. A later MVP could connect approved forms and search to a controlled data source such as a private database, but only after client approval, access controls, privacy review, and production architecture are completed.
 
 Built for sales/demo validation before the full Abbeydale YardOps MVP.
 
-Deployment retry: 2026-07-06 17:37 SAST.
+Deployment retry recorded: 2026-07-06 17:37 SAST.
